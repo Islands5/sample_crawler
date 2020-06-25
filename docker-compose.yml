@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/app/Dockerfile
+    environment:
+      - HOST=0.0.0.0
+      - LANG=C.UTF-8
+      - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+    tty: true
+    volumes:
+      - .:/app:cached
